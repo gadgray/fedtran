@@ -1,0 +1,83 @@
+ 
+ <!-- Navbar Start -->
+ <div class="container-fluid px-10">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="/dashboard" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5  text-light" ><i class="fa fa-truck mr-2"></i> Admin</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="/register" class="nav-item nav-link text-dark bg-light active ">Register admin</a>
+                <a href="/about" class="nav-item nav-link text-light bg-light">About</a>
+                <a href="/service" class="nav-item nav-link text-light bg-light">Service</a>
+                <a href="/editprice" class="nav-item nav-link text-light bg-light">Edit Price</a>
+                
+            </div>
+            <a href="/logout" class="btn btn-prime py-2 px-4 d-none d-lg-block">Logout</a>
+        </div>
+    </nav>
+</div>
+
+<table class="table table-hover container">
+    <thead>
+      <tr>
+        <th scope="col">S/N</th>
+        <th scope="col">OrderID</th>
+        <th scope="col">Tracking ID</th>
+        <th scope="col">Dispatch Location</th>
+        <th scope="col">Dispatch Date</th>
+        <th scope="col">Arrival Location</th>
+        <th scope="col">Arrival Date</th>
+        <th scope="col">Date generated</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody style="font-size:14px;">
+        <%if(typeof orders != 'undefined'){%>
+            <%orders.forEach((order, i)=>{ %>
+                <tr>
+                    <td scope="row"><%=i+1%></td>
+                    <form action="/update" method="post">
+                        <td>
+                            <input type="text" value="<%= typeof order.OrderId != 'undefined'? order.OrderId: '' %>" name="orderId">
+                        </td>
+                        <td>
+                            <input type="text" value="<%= typeof  order.Trackid != 'undefined'? order.Trackid: '' %>" name="trackId">
+                        </td>
+                        <td>
+                            <input type="text" value="<%= typeof  order.DispatchLocation != 'undefined'? order.DispatchLocation : '' %>" name="dispatchLocation">
+                        </td>
+                        <td>
+                            <input type="text" value="<%= typeof order.DispatchDate != 'undefined'? order.DispatchDate: ''%>" name="dispatchDate">
+                        </td>
+                        <td>
+                            <input type="text" value="<%=  typeof order.ArrivalLocation != 'undefined'? order.ArrivalLocation: '' %>" name="arrivalLocation">
+                        </td>
+                        <td>
+                            <input type="text" value="<%= typeof order.ArivalDate != 'undefined'? order.ArivalDate: '' %>" name="arrivalDate">
+                        </td>
+                        <td><%= order.GenDate.toISOString()%></td>
+                        <td>
+                            <button class="btn btn-warning" type="submit">Update</button>
+                        </td>
+                       
+                    </form>
+                        <form action="/delete" method="post">
+                            <td>
+                                <input type="hidden" value="<%= order._id%>" name="id">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </td>
+                            
+                        </form>
+                    
+                  </tr>
+            <%})%>
+      
+      <%}%>
+      
+    </tbody>
+  </table>
