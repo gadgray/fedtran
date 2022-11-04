@@ -116,7 +116,7 @@ router.get('/about', (req,res)=>{
 })
 
 // register
-router.get('/register', ensureAuth, (req,res)=>{
+router.get('/register', (req,res)=>{
     
 
     res.render('register')
@@ -185,7 +185,7 @@ router.post('/login', (req,res, next)=>{
 });
 
 // dashboard
-router.get('/dashboard', (req,res)=>{
+router.get('/dashboard', ensureAuth, (req,res)=>{
 
     Order.find({})
     .catch(err=>{
