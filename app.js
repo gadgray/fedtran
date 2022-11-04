@@ -68,6 +68,7 @@ app.use((req, res, next)=>{
 
 // routes
 app.use('/', require('./routes/index'));
+app.use('/dashboard', require('./routes/dashboard'));
 
 app.listen(PORT, ()=>{
     MongoConnect();

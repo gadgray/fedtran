@@ -7,6 +7,10 @@ const {ensureAuth} = require('../config/auth');
 // models
 const User = require('../models/user');
 const Order = require('../models/order');
+const NewsLetter = require('../models/newsletter');
+const Quote = require('../models/quote');
+const Contact = require('../models/contact');
+
 
 
 
@@ -82,14 +86,34 @@ router.post('/itemno', (req,res)=>{
 
 
 
-// track page
-
-
-
 //contact 
 router.get('/contact', (req,res)=>{
 
     res.render('contact');
+})
+
+//contact 
+router.post('/contact', (req,res)=>{
+    const {name, email, message} = req.body;
+    const contact = new Contact({
+        name: name,
+        email: email,
+        message: message
+    })
+
+    contact.save()
+    .then(err=>{
+        if(err){
+            req.flash('error_msg', 'error sending message');
+            res.redirect('/contact');
+        }
+
+    })
+    .then(()=>{
+
+        req.flash('success_msg', 'message sent');
+        res.render('contact');
+    })
 })
 
 
@@ -98,6 +122,46 @@ router.get('/price', (req,res)=>{
 
     res.render('price');
 })
+
+
+// newly added...
+// terms 
+router.get('/terms', (req,res)=>{
+
+    res.render('terms');
+});
+
+// sea 
+router.get('/sea', (req,res)=>{
+
+    res.render('sea');
+});
+
+// Air 
+router.get('/air', (req,res)=>{
+
+    res.render('Air');
+});
+
+// land 
+router.get('/land', (req,res)=>{
+
+    res.render('land');
+});
+
+// privacy 
+router.get('/privacy', (req,res)=>{
+
+    res.render('privacy');
+});
+
+// warehouse 
+router.get('/warehouse', (req,res)=>{
+
+    res.render('warehouse');
+});
+
+// end.....
 
 
 // services
@@ -112,6 +176,8 @@ router.get('/about', (req,res)=>{
     res.render('about');
 })
 
+
+// dashboards pages
 // register
 router.get('/register', (req,res)=>{
     
@@ -182,20 +248,7 @@ router.post('/login', (req,res, next)=>{
 });
 
 // dashboard
-router.get('/dashboard', ensureAuth, (req,res)=>{
-
-    Order.find({})
-    .catch(err=>{
-        throw err
-    })
-    .then(orders=>{
-        res.render('dashboard', {orders});
-    })
-   ;
-})
-
 // update
-
 router.post('/update', (req,res)=>{
     const {orderId, trackId, dispatchLocation, dispatchDate, arrivalLocation, arrivalDate }= req.body;
 
@@ -233,9 +286,112 @@ router.post('/delete', (req,res)=>{
         req.flash('success_msg', 'order deleted')
         res.redirect('/dashboard')
     })
-})
-// logout
+});
 
+// contact Delete
+router.post('/deletecontact', (req,res)=>{
+
+    Contact.findByIdAndDelete(req.body.id)
+    .catch(err=> {
+        throw err
+    })
+    .then(()=>{
+        req.flash('success_msg', 'order deleted')
+        res.redirect('/dashboard/list')
+    });
+});
+
+// Admin Delete
+router.post('/deleteuser', (req,res)=>{
+
+    User.findByIdAndDelete(req.body.id)
+    .catch(err=> {
+        throw err
+    })
+    .then(()=>{
+        req.flash('success_msg', 'order deleted')
+        res.redirect('/dashboard/user')
+    });
+});
+
+
+
+// newsletter
+router.post('/newsletter', (req,res)=>{
+
+    const {email} = req.body;
+    NewsLetter.findOne({email: email})
+    .catch(err=>{throw err})
+    .then(emails=>{
+
+        if(emails){
+            res.redirect('/');
+        }
+        const newsLetter = new NewsLetter({
+            email: email
+        })
+        newsLetter.save()
+        .catch(err=>{throw err})
+        .then(()=>{
+            req.flash('success_msg', 'you have successfully registered for our newsletter');
+            res.redirect('/')
+        })
+    })
+    
+    
+
+
+})
+
+// newsletter Delete
+router.post('/deletenewsletter', (req,res)=>{
+
+    NewsLetter.findByIdAndDelete(req.body.id)
+    .catch(err=> {
+        throw err
+    })
+    .then(()=>{
+        req.flash('success_msg', 'order deleted')
+        res.redirect('/dashboard/newsletter')
+    });
+});
+
+// geting quotes
+router.post('/getquote', (req,res)=>{
+    const {name, email, service} = req.body;
+    console.log(req.body);
+    const quote = new Quote({
+        name: name,
+        email: email,
+        services: service
+    })
+
+    quote.save()
+    .catch(err=>{
+        throw err
+    })
+    .then(()=>{
+        req.flash('success_msg', 'Thank you for your request you will recieve an email soon');
+        res.render('service');
+    });
+
+});
+
+// Quote Delete
+router.post('/deletecontact', (req,res)=>{
+
+    Quote.findByIdAndDelete(req.body.id)
+    .catch(err=> {
+        throw err
+    })
+    .then(()=>{
+        req.flash('success_msg', 'order deleted')
+        res.redirect('/dashboard/quote')
+    });
+});
+
+
+// logout
 router.get('/logout', (req,res)=>{
 
     req.logOut(err => {if(err){
@@ -245,7 +401,4 @@ router.get('/logout', (req,res)=>{
     res.redirect('/login');
     req.flash('success_msg', 'you are logged out');
 })
-
-
-
 module.exports= router;

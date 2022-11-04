@@ -52,7 +52,7 @@
                 </div>
                 <a href="/contact" class="nav-item nav-link text-light bg-light">Support</a>
             </div>
-            <a href="/login" class="btn btn-prime py-2 px-4 d-none d-lg-block">Login</a>
+            <a href="/login" class="btn btn-prime py-2 px-4 d-none d-lg-block">Staff</a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -64,7 +64,6 @@
             <h1 class="text-primary text-light mb-4">Safe & Faster..</h1>
             <h1 class="text-white display-3 mb-5">Logistics Services</h1>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
-                <%- include('./partials/messages')%>
                 <div class="input-group">
                     <form action="/trackid" class="input-group" method="post">
                         <input type="text" class="form-control border-light" name="trackID" style="padding: 30px;" placeholder="Tracking Id">
@@ -96,23 +95,7 @@
         </div>
     </div>
     
-     <!-- Video Modal -->
-     <!-- <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Header End -->
-
+    
 
 
     <!-- About Start -->
@@ -121,113 +104,116 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
                     <img class="img-fluid w-100" src="img/about.jpg" alt="">
-
+                    <div class="bg-primary text-dark text-center p-4">
+                        <h3 class="m-0">7+ Years Experience</h3>
+                    </div>
                 </div>
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
                     <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                  
+                    <p class="mb-4">-------- LOGISTICS is a relatively new but Leading International Freight Forwarders based in the US(patnering with giants like FedEx). Turning...</p>
+                    <a href="/about" class="btn btn-primary mt-3 py-2 px-4">Learn More</a>
                 </div>
             </div>
         </div>
        
 
-    <!--  Quote Request Start -->
-    <div class="container-fluid bg-secondary my-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 py-5 py-lg-0">
-                    <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
-                    <h1 class="mb-4">Request A Free Quote</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">225</h1>
-                            <h6 class="font-weight-bold mb-4">SKilled Experts</h6>
+        <!-- <div class="container-fluid bg-secondary my-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 py-5 py-lg-0">
+                        <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
+                        <h1 class="mb-4">Request A Free Quote</h1>
+                        <p class="mb-4">With over 100 skilled staff members and tens of dozen completed project, you can be sure of the best services from us. Contact us to get the best Qoutes for services very fast</p>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h1 class="text-primary mb-2" data-toggle="counter-up">105</h1>
+                                <h6 class="font-weight-bold mb-4">SKilled Experts</h6>
+                            </div>
+                            <div class="col-sm-4">
+                                <h1 class="text-primary mb-2" data-toggle="counter-up">379</h1>
+                                <h6 class="font-weight-bold mb-4">Happy Clients</h6>
+                            </div>
+                            <div class="col-sm-4">
+                                <h1 class="text-primary mb-2" data-toggle="counter-up">800</h1>
+                                <h6 class="font-weight-bold mb-4">Complete Projects</h6>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">1050</h1>
-                            <h6 class="font-weight-bold mb-4">Happy Clients</h6>
-                        </div>
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">2500</h1>
-                            <h6 class="font-weight-bold mb-4">Complete Projects</h6>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="bg-primary py-5 px-4 px-sm-5">
+                            <form class="py-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" style="height: 47px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Air Frieght</option>
+                                        <option value="2">Sea Frieght</option>
+                                        <option value="3">Wharehousing</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Get A Quote</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>Air Freight</option>
-                                    <option value="1">Ocean Freight</option>
-                                    <option value="2">Wharehousing</option>
-                                    <option value="3">Service 1</option>
-                                </select>
-                            </div>
-                            <div>
-                                <a href="" class="btn btn-primme py-2 px-4 d-none d-lg-block">Get A Quote</a>
-                            </div>
-                        </form>
+            </div>
+        </div> -->
+        <!-- Quote Request Start -->
+    
+    
+        <!-- Services Start -->
+        <div class="container-fluid pt-5">
+            <div class="container">
+                <div class="text-center pb-2">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Our Services</h6>
+                    <h1 class="mb-4">Best Logistic Services</h1>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-lg-3 col-md-6 text-center mb-5">
+                        <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                            <i class="fa fa-2x fa-plane text-dark pr-3"></i>
+                            <h6 class="text-white font-weight-medium m-0">Air Freight</h6>
+                        </div>
+                        <p>The Express mode of Transport and Freight Forwarding for Timely Bound Cargo Shipments. Air Freight</p>
+                        <a class="border-bottom text-decoration-none" href="/Air">Read More</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center mb-5">
+                        <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                            <i class="fa fa-2x fa-ship text-dark pr-3"></i>
+                            <h6 class="text-white font-weight-medium m-0">Ocean Freight</h6>
+                        </div>
+                        <p>The Highly Cost Effective mode of Transport in Freight Forwarding for Large, Heavy and Standard Cargo Shipments.</p>
+                        <a class="border-bottom text-decoration-none" href="/sea">Read More</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center mb-5">
+                        <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                            <i class="fa fa-2x fa-truck text-dark pr-3"></i>
+                            <h6 class="text-white font-weight-medium m-0">Land Transport</h6>
+                        </div>
+                        <p>We provide Local, International & GCC Land Cargo Transport & Freight Forwarding Options.</p>
+                        <a class="border-bottom text-decoration-none" href="/land">Read More</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center mb-5">
+                        <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                            <i class="fa fa-2x fa-store text-dark pr-3"></i>
+                            <h6 class="text-white font-weight-medium m-0">Cargo Storage</h6>
+                        </div>
+                        <p>We provide pro-active solutions for managing your Logistics and providing Warehousing services, storage & distribution for your Cargo.</p>
+                        <a class="border-bottom text-decoration-none" href="/warehouse">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Quote Request Start -->
-
-
-    <!-- Services Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <h6 class="text-primary text-uppercase font-weight-bold">Our Services</h6>
-                <h1 class="mb-4">Best Logistic Services</h1>
-            </div>
-            <div class="row pb-3">
-                <div class="col-lg-3 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
-                        <i class="fa fa-2x fa-plane text-dark pr-3"></i>
-                        <h6 class="text-white font-weight-medium m-0">Air Freight</h6>
-                    </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
-                    <a class="border-bottom text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
-                        <i class="fa fa-2x fa-ship text-dark pr-3"></i>
-                        <h6 class="text-white font-weight-medium m-0">Ocean Freight</h6>
-                    </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
-                    <a class="border-bottom text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
-                        <i class="fa fa-2x fa-truck text-dark pr-3"></i>
-                        <h6 class="text-white font-weight-medium m-0">Land Transport</h6>
-                    </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
-                    <a class="border-bottom text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
-                        <i class="fa fa-2x fa-store text-dark pr-3"></i>
-                        <h6 class="text-white font-weight-medium m-0">Cargo Storage</h6>
-                    </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
-                    <a class="border-bottom text-decoration-none" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Services End -->
+    
     <!-- Services End -->
 
 
@@ -247,7 +233,7 @@
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6></li>
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>24/7 Customer Support</h6></li>
                     </ul>
-                    <a href="" class="btn btn-primary mt-3 py-2 px-4">Learn More</a>
+                    
                 </div>
             </div>
         </div>
@@ -271,15 +257,10 @@
                         <img class="card-img-top" src="img/team-1.jpg" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <h5 class="font-weight-bold">Harris D. brown</h5>
+                                <span>Purchasing Manager</span>
                             </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -288,15 +269,10 @@
                         <img class="card-img-top" src="img/team-2.jpg" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <h5 class="font-weight-bold">Jackson Hill</h5>
+                                <span>Logistics Engineer</span>
                             </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -305,15 +281,10 @@
                         <img class="card-img-top" src="img/team-3.jpg" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <h5 class="font-weight-bold">Abigail Smith</h5>
+                                <span>Inventory Manager</span>
                             </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -322,15 +293,10 @@
                         <img class="card-img-top" src="img/team-4.jpg" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <h5 class="font-weight-bold">Williams Smith</h5>
+                                <span>Supply chain Manager</span>
                             </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -353,33 +319,33 @@
                     <div class="d-flex align-items-center mb-3">
                         <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
                         <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
+                            <h6 class="font-weight-semi-bold m-0">laman wilson</h6>
+                            <small>- Goods Wholesale</small>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                    <p class="m-0">I used thier services for the first time three months ago and i definitely would recomend them to anyone</p>
                 </div>
                 <div class="position-relative bg-secondary p-4">
                     <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
                     <div class="d-flex align-items-center mb-3">
                         <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
                         <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
+                            <h6 class="font-weight-semi-bold m-0">Carl Peter</h6>
+                            <small>- Salesman</small>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                    <p class="m-0">I have been a customer for 2 years now and can safely say i have not had any hiccups with services provides</p>
                 </div>
                 <div class="position-relative bg-secondary p-4">
                     <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
                     <div class="d-flex align-items-center mb-3">
                         <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" alt="">
                         <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
+                            <h6 class="font-weight-semi-bold m-0">Travis Bradely</h6>
+                            <small>- Data Analyst</small>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                    <p class="m-0">Can gaurantee you would have timely odelivery and perfect handling of perishable goods</p>
                 </div>
                 <div class="position-relative bg-secondary p-4">
                     <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
@@ -387,10 +353,10 @@
                         <img class="img-fluid rounded-circle" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" alt="">
                         <div class="ml-3">
                             <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
+                            <small>- Electronic Salesman</small>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                    <p class="m-0">One of the best logistics services out here. im surprised they are not trending</p>
                 </div>
             </div>
         </div>
@@ -398,10 +364,10 @@
     <!-- Testimonial End -->
 
 
-    
+</div>   
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-7 col-md-6">
                 <div class="row">
@@ -417,44 +383,29 @@
                             <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                   
+                  
                 </div>
             </div>
-            <div class="col-lg-5 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Newsletter</h3>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/newsletter')%>
         </div>
     </div>
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">FedTrans</a>. All Rights Reserved. 
+                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
 				
-			</p>
+				
+                </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">
                 <ul class="nav d-inline-flex">
                     <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                        <a class="nav-link text-white py-0" href="/privacy">Privacy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                        <a class="nav-link text-white py-0" href="/terms">Terms</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Help</a>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
@@ -462,4 +413,8 @@
     <!-- Footer End -->
 
 
- 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- Footer End -->

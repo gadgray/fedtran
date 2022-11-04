@@ -1,0 +1,57 @@
+ 
+ <!-- Navbar Start -->
+
+ <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+    <a href="/dashboard" class="navbar-brand ml-lg-3">
+        <h1 class="m-0 display-5  text-light" ><i class="fa fa-truck mr-2"></i> Admin</h1>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+        <div class="navbar-nav m-auto py-0">
+            <a href="/register" class="nav-item nav-link text-light">Register admin</a>
+            <a href="/dashboard/list" class="nav-item nav-link text-light">Messages</a>
+            <a href="/dashboard/user" class="nav-item nav-link text-light">Admins</a>
+            <a href="/dashboard/quote" class="nav-item nav-link text-light">Quotes</a>
+            <a href="/dashboard/newsletter" class="nav-item nav-link text-light">News Letters</a>
+            
+        </div>
+        <a href="/logout" class="btn nav-link nav-item btn-prime py-2 px-4 d-none d-lg-block">Logout</a>
+    </div>
+</nav>
+
+<div class="table-responsive">
+    <table class="table table-hover container-fluid">
+        <thead>
+        <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th> 
+            <th scope="col">Service</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody style="font-size:14px;">
+            <%if(typeof quotes != 'undefined'){%>
+                <%quotes.forEach((quote, i)=>{%>
+                    <tr>
+                        <td scope="row"><%=i+1%></td>
+                        <td><%= quote.name%></td>
+                        <td><%= quote.email%></td>
+                        <td><%= quote.services%></td>
+                            <form action="/deletequote" method="post">
+                                <td>
+                                    <input type="hidden" value="<%= quote._id%>" name="id">
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </td>
+                                
+                            </form>
+                        
+                    </tr>
+                <%})%> 
+            <%}%>
+        
+        </tbody>
+    </table>
+</div>
