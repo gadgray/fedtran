@@ -40,9 +40,10 @@ router.post('/trackid', (req,res)=>{
         if (!order){
             req.flash('error_msg', 'Tracking ID doesn\'t exist');
             res.redirect('/');
+        }else{  
+            res.render('track', {order});
         }
 
-        res.render('track', {order});
     })
 })
 
