@@ -85,6 +85,7 @@
                 <h1 class="mb-4">Contact For Any Queries</h1>
                 <div class="contact-form bg-secondary" style="padding: 30px;">
                     <div id="success"></div>
+                    <%- include('./partials/messages')%>
                     <form action="/contact" method="post">
                         <div class="control-group">
                             <input type="text" class="form-control border-0 p-4" id="name" name="name" placeholder="Your Name"
