@@ -33,6 +33,11 @@ router.post('/trackid', (req,res)=>{
         throw err
     })
     .then(order=>{
+        if (!order){
+            req.flash('error_msg', 'Tracking ID doesn\'t exist');
+            res.redirect('/');
+        }
+
         res.render('track', {order});
     })
 })
@@ -49,9 +54,9 @@ router.post('/itemno', (req,res)=>{
         throw err
     })
     .then((orders=>{
-        if(orders){
-            req.flash('error_msg','Order already being tracked');
-            res.render('gen', {orders})
+        if(!orders){
+            req.flash('error_msg','Order does not exist');
+            res.redirect('/')
         }else{
             const order = new Order({
                 OrderId: itemNo,
@@ -75,19 +80,11 @@ router.post('/itemno', (req,res)=>{
 })
 
 
-// gen page
-router.get('/gen', (req, res)=>{
-    // Order.findOne({OrderId: })
 
-    res.render('gen')
-})
 
 // track page
 
-router.get('/track', (req, res)=>{
 
-    res.render('track')
-})
 
 //contact 
 router.get('/contact', (req,res)=>{
