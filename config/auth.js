@@ -2,10 +2,10 @@ module.exports = {
     ensureAuth :
         function(req, res, next){
 
-            if(req.isAuthentcated()){
+            if(req.isAuthenticated()){
                 return next();
             }
-            req.falsh('error_msg', 'error login');
+            req.flash('error_msg', 'error login');
             res.redirect('/login');
         }
     
