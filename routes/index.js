@@ -91,7 +91,7 @@ router.post('/itemno', (req,res)=>{
 router.get('/contact', (req,res)=>{
 
     res.render('contact');
-})
+});
 
 //contact 
 router.post('/contact', (req,res)=>{
@@ -100,22 +100,16 @@ router.post('/contact', (req,res)=>{
         name: name,
         email: email,
         message: message
-    })
+    });
 
     contact.save()
-    .then(err=>{
-        if(err){
-            req.flash('error_msg', 'error sending message');
-            res.redirect('/contact');
-        }
-
-    })
+    .catch(err=>{throw err})
     .then(()=>{
+        req.flash('success_msg', 'message sent we will be getting back to you');
+        res.redirect('/contact');
+    });
 
-        req.flash('success_msg', 'message sent');
-        res.render('contact');
-    })
-})
+});
 
 
 //Pricing 
