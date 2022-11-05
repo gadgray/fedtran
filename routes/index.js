@@ -373,7 +373,7 @@ router.post('/getquote', (req,res)=>{
 });
 
 // Quote Delete
-router.post('/deletecontact', (req,res)=>{
+router.post('/deletequote', (req,res)=>{
 
     Quote.findByIdAndDelete(req.body.id)
     .catch(err=> {

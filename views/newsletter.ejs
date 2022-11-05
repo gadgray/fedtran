@@ -38,7 +38,7 @@
                         <td scope="row"><%=i+1%></td>
                         <td><%= newsletter._id%></td>
                         <td><%= newsletter.email%></td>
-                            <form action="/deletenewsl  etter" method="post">
+                            <form action="/deletenewsletter" method="post">
                                 <td>
                                     <input type="hidden" value="<%= newsletter._id%>" name="id">
                                     <button class="btn btn-danger" type="submit">Delete</button>
