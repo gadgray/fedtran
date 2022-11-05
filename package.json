@@ -1,7 +1,7 @@
 {
   "name": "fedtran",
   "version": "1.0.0",
-  "description": "",
+  "description": "fedtran application deployed on smartweb",
   "main": "app.js",
   "directories": {
     "lib": "lib"
@@ -10,8 +10,13 @@
     "Dev": "nodemon app.js",
     "start": "node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gadgray/fedtran.git"
+  },
+
   "keywords": [],
-  "author": "",
+  "author": "gadgray",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
