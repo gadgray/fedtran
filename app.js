@@ -26,7 +26,7 @@ async function MongoConnect(){
 
 
 const app = Express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // static
 app.use(Express.static('public'));
