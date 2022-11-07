@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Express = require('express');
 const Layouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
@@ -7,14 +8,15 @@ const passport = require('passport');
 const flash = require('connect-flash');
 
 // db
-const db = require('./config/key').MongoURI;
+// const db = ('./config/key').MongoURI;
+
 
 
 // passport Config
 require('./config/passport')(passport);
 
 async function MongoConnect(){
-    await mongoose.connect(db)
+    await mongoose.connect(process.env.MongoURI)
     .catch((err)=>{
         throw err;
     })
